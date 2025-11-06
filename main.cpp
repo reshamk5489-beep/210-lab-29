@@ -1,5 +1,11 @@
 // Include headers for reading from a file, populating data structure, etc.
-// #include <iostream>, <map>, <array>, <list>, <string>
+// #include <iostream>
+// #include <map>
+// #include <array>
+// #include <list>
+// #include <string>
+// using namespace std;
+
 
 // Define a function to simulate restaurant order state changes over time
 // Parameters: map of cuisines, and number of time periods
@@ -16,13 +22,24 @@
 // Seventh step: Call the simulateCuisine() function
 // Eighth step: End of main function
 
-// Implement simulateCuisine() function
-// Create a loop that iterates over 25 time periods
-// Iterate through each cuisine in the map 
-    // For each cuisine, simulate changes 
-        // Randomly decide if an order is to be placed in the waiting, cooking, or completed phase
-        // Randomly move some orders from waiting phase to cooking phase
-// - Randomly move some order from cooking phase to completed phase
-// - Randomly add new orders to waiting phase to simulate arrival
-// - Wait or pause briefly to simulate passage of time
-// End of simulateCuisine() function
+
+// simulateCuisine function logic
+// for each time period (1 to 25):
+   // for each cuisine in the map:
+       // Move 1 order from waiting [0] to cooking [1] if list not empty
+       //if waiting list not empty:
+           // remove first order from waiting
+           //add to cooking list
+
+       // Move 1 order from cooking [1] to completed [2] if list not empty
+       // if cooking list not empty:
+           // remove first order from cooking
+           // add to completed list
+
+       // Optionally, add a new dummy order to waiting list
+       // add "OrderX-CuisineName" to waiting list
+
+       // Print current number of orders in waiting, cooking, completed for this cuisine
+
+   // Wait or pause briefly to simulate passage of time
+   // End of simulateCuisine function
