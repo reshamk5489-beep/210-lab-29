@@ -12,3 +12,9 @@ std::array of std::lists that store orders in the different kitchens. It will st
 with list 0 where the orders are waiting to be started, then list 1 where the orders 
 are currently being cooked, and lastly list 2 where the orders are completed and ready 
 to serve.
+
+Simulated events:
+The simulation will focus on three main events: new customer orders, orders moving 
+thorugh cooking stage, and dishes completed ready to serve. At any time, new orders may 
+enter the system, existing orders may move from waiting to cooking, or finished meals 
+may move to the completed stage, ready for pickup.
