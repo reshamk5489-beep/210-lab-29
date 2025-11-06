@@ -4,6 +4,7 @@
 #include <array>
 #include <list>
 #include <string>
+#include <fstream>
 using namespace std;
 
 
@@ -11,18 +12,39 @@ using namespace std;
 // Parameters: map of cuisines, and number of time periods
 void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePeriods);
 
-
 // Define main() function
-// Initialize a map<string, array<list<string>,3>> called cuisineMap to store the information for the different cuisines, each associated with an array of lists for orders that are in the waiting phase, cooking phase, and completed phase
+int main()
+{
+    // Initialize a map<string, array<list<string>,3>> called cuisineMap to store 
+    // the information for the different cuisines, each associated with an array 
+    // of lists for orders that are in the waiting phase, cooking phase, and 
+    // completed phase
+    map<string, array<list<string>,3>> cuisineMap;
 
-// First step: Open and external file ("orders.txt") to populate the map from it
-// Second step: Check if file is open successfully otherwise print an error and exit
-// Third step: Read data from file until the end of file is reached
-// Fourth step: For each line, extract cuisine name and order data
-// Fifth step: Insert order into the appropriate list in the array for their cuisine
-// Sixth step: Close the file
-// Seventh step: Call the simulateCuisine() function
-// Eighth step: End of main function
+    // First step: Open and external file ("orders.txt") to populate the map from it
+    ifstream inputFile("orders.txt");
+
+    // Second step: Check if file is open successfully otherwise print an error and exit
+
+    // Third step: Read data from file until the end of file is reached 
+    // Mock reading a single line (dummy data for now)
+
+    // Fourth step: For each line, extract cuisine name and order data
+    string cuisineName = "Italian";
+    string order = "Order1-Pizza";
+    cout << "Reading from file: " << cuisineName << " - " << order << endl;
+
+    // Fifth step: Insert order into the appropriate list in the array for their cuisine
+    cuisineMap[cuisineName][0].push_back(order);
+
+    // Sixth step: Close the file
+    inputFile.close();
+
+    // Seventh step: Call the simulateCuisine() function
+    simulateCuisine(cuisineMap, 1);
+
+    return 0;
+}
 
 // simulateCuisine function logic
 void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePeriods)
@@ -30,7 +52,7 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
     cout << "simulateCuisine() called with " << cuisineMap.size() << " cuisines." << endl;
     
     // for each time period (1 to 25):
-    for (int i = 1; i <= 25; ++i)
+    for (int i = 1; i <= timePeriods; ++i)
     {
         // for each cuisine in the map:
         for (auto& cuisine : cuisineMap)
