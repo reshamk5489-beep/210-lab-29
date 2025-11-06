@@ -1,20 +1,17 @@
 Project Overview:
-My project creates a restaurant order processing simulation to show how customer 
-orders move through different food cuisines over some time. The simulation shows 
-how the customers’ orders change from waiting to cooking to complete when dining 
-time is busy. Then, it will following each order from being accepted to being 
-cooked to being finished.
+My project creates a restaurant order processing simulation to show how customer orders 
+move through different food cuisines over some time. The simulation shows how the 
+customers’ orders change from waiting period to cooking period to completion period.
 
 Implementation:
-I plan to use a std::map where the key is the kitchen name such as americanKitchen, 
-mexicanKitchen, and italianKitchen. The map’s value will be a three element 
-std::array of std::lists that store orders in the different kitchens. It will start 
-with list 0 where the orders are waiting to be started, then list 1 where the orders 
-are currently being cooked, and lastly list 2 where the orders are completed and ready 
-to serve.
+I plan to use a std::map where the key is the cuisine name such as americanCuisine, 
+mexicanCuisine, and italianCuisine. The map’s value will be an std::array of three 
+elements each containing std::lists of orders. The first element of the array stored the 
+orders that are waiting to be started, then the second will store orders that are currently 
+being cooked, and lastly the third will store orders that are completed and ready to serve.
 
 Simulated events:
-The simulation will focus on three main events: new customer orders, orders moving 
-thorugh cooking stage, and dishes completed ready to serve. At any time, new orders may 
-enter the system, existing orders may move from waiting to cooking, or finished meals 
-may move to the completed stage, ready for pickup.
+The simulation will focus on three main events: the new order that is waiting, then the 
+cooking phase, and lastly the completed phase. At any given time period, new orders may enter 
+the system, existing orders may move from waiting to cooking, and finished meals may move to 
+the completed stage.
