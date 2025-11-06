@@ -1,0 +1,14 @@
+Project Overview:
+My project creates a restaurant order processing simulation to show how customer 
+orders move through different food cuisines over some time. The simulation shows 
+how the customers’ orders change from waiting to cooking to complete when dining 
+time is busy. Then, it will following each order from being accepted to being 
+cooked to being finished.
+
+Implementation:
+I plan to use a std::map where the key is the kitchen name such as americanKitchen, 
+mexicanKitchen, and italianKitchen. The map’s value will be a three element 
+std::array of std::lists that store orders in the different kitchens. It will start 
+with list 0 where the orders are waiting to be started, then list 1 where the orders 
+are currently being cooked, and lastly list 2 where the orders are completed and ready 
+to serve.
