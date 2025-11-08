@@ -5,6 +5,7 @@
 #include <list>
 #include <string>
 #include <fstream>
+#include <sstream>
 using namespace std;
 
 
@@ -25,13 +26,27 @@ int main()
     ifstream inputFile("orders.txt");
 
     // Second step: Check if file is open successfully otherwise print an error and exit
-    if (!inputFile) {
+    if (!inputFile) 
+    {
         cout << "Error: could not open orders.txt" << endl;
         return 1;  // exit program with error code
     }
 
     // Third step: Read data from file until the end of file is reached 
-    // Mock reading a single line (dummy data for now)
+    string line;
+    while (getline(inputFile, line)) 
+    {
+        // line contains one order from the file
+        stringstream ss(line);
+        string cuisineName;
+        string order;
+
+        // Insert into map (wireframe)
+        // cuisineMap[cuisineName][0].push_back(order);
+        if (getline(ss, cuisineName, ',') && getline(ss, order)) {
+            cuisineMap[cuisineName][0].push_back(order);  // add to waiting list
+        }
+    }
 
     // Fourth step: For each line, extract cuisine name and order data
     string cuisineName = "Italian";
