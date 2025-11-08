@@ -1,0 +1,15 @@
+function to test: loadOrdersFromFile(cuisineMap)
+
+Test that it correctly opens a file.
+
+Test that a full line is read correctly.
+
+Test that it correctly parses lines into cuisine and order.
+
+Test that it inserts the data into the correct list in your map.
+
+Test edge cases (empty file, invalid line format).
+
+Test that function returns true if the data is loaded correctly into the map.
+
+Test that function returns false if failed to open a file.

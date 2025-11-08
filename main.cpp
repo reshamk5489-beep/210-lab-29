@@ -11,7 +11,7 @@ using namespace std;
 // Define a function to simulate restaurant order state changes over time
 // Parameters: map of cuisines, and number of time periods
 void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePeriods);
-void loadOrdersFromFile(map<string, array<list<string>,3>> &cuisineMap);
+bool loadOrdersFromFile(map<string, array<list<string>,3>> &cuisineMap);
 
 // Define main() function
 int main()
@@ -22,17 +22,11 @@ int main()
     // completed phase
     map<string, array<list<string>,3>> cuisineMap;
 
-    // Open and external file ("orders.txt") to populate the map from it
-    ifstream inputFile("orders.txt");
-
-    // Check if file is open successfully otherwise print an error and exit
-    if (!inputFile) 
+    if (!loadOrdersFromFile(cuisineMap))
     {
         cout << "Error: could not open orders.txt" << endl;
         return 1;  // exit program with error code
     }
-
-    loadOrdersFromFile(cuisineMap);
 
     // Call the simulateCuisine() function
     simulateCuisine(cuisineMap, 1);
@@ -75,8 +69,17 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
     }
 }
 
-void loadOrdersFromFile(map<string, array<list<string>,3>> &cuisineMap)
+bool loadOrdersFromFile(map<string, array<list<string>,3>> &cuisineMap)
 {
+    // Open and external file ("orders.txt") to populate the map from it
+    ifstream inputFile("orders.txt");
+
+    // Check if file is open successfully otherwise print an error and exit
+    if (!inputFile) 
+    {
+        return false;
+    }
+
     // Read data from file until the end of file is reached 
     string line;
     while (getline(inputFile, line)) 
@@ -101,4 +104,6 @@ void loadOrdersFromFile(map<string, array<list<string>,3>> &cuisineMap)
 
     // Close the file
     inputFile.close();
+    
+    return true;
 }
