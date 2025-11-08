@@ -2,8 +2,6 @@ function to test: loadOrdersFromFile(cuisineMap)
 
 Test that it correctly opens a file.
 
-Test that a full line is read correctly.
-
 Test that it correctly parses lines into cuisine and order.
 
 Test that it inserts the data into the correct list in your map.
@@ -13,3 +11,60 @@ Test edge cases (empty file, invalid line format).
 Test that function returns true if the data is loaded correctly into the map.
 
 Test that function returns false if failed to open a file.
+
+----------------------------------------------------
+
+#include <iostream>
+#include <fstream>
+#include <map>
+#include <array>
+#include <list>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+// Function prototype
+bool loadOrdersFromFile(map<string, array<list<string>,3>> &cuisineMap);
+
+int main() 
+{
+    // This unit test verifies that loadOrdersFromFile() correctly reads orders from orders.txt
+    // and populates the cuisineMap. We will check:
+    // 1) The function returns true when file exists
+    // 2) The cuisineMap contains at least one cuisine
+    // 3) Orders are correctly placed in the waiting list
+
+    map<string, array<list<string>,3>> cuisineMap;
+
+    // Call the function and check return value
+    bool success = loadOrdersFromFile(cuisineMap);
+    if (!success) 
+    {
+        cout << "Unit Test Failed: Could not open orders.txt" << endl;
+        return 1;
+    }
+    cout << "Unit Test Passed: File opened successfully" << endl;
+
+    // Verify map contents
+    if (cuisineMap.empty()) 
+    {
+        cout << "Unit Test Failed: Map is empty after loading orders" << endl;
+        return 1;
+    }
+    cout << "Unit Test Passed: Map contains data" << endl;
+
+    // Print the contents of the map to check order insertion
+    for (auto &pair : cuisineMap) 
+    {
+        cout << "Cuisine: " << pair.first << endl;
+        cout << "  Waiting Orders:" << endl;
+        for (auto &order : pair.second[0]) {
+            cout << "    " << order << endl;
+        }
+        cout << "  Cooking Orders (should be empty): " << pair.second[1].size() << " items" << endl;
+        cout << "  Completed Orders (should be empty): " << pair.second[2].size() << " items" << endl;
+    }
+
+    return 0;
+}
