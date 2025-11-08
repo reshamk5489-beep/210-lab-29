@@ -1,100 +1,100 @@
-americanCuisine,Order1-Burger
-mexicanCuisine,Order2-Taco
-italianCuisine,Order3-Pasta
-americanCuisine,Order4-HotDog
-mexicanCuisine,Order5-Burrito
-italianCuisine,Order6-Lasagna
-americanCuisine,Order7-Steak
-mexicanCuisine,Order8-Quesadilla
-italianCuisine,Order9-Ravioli
-americanCuisine,Order10-ChickenSandwich
-mexicanCuisine,Order11-Enchilada
-italianCuisine,Order12-Fettuccine
-americanCuisine,Order13-BBQChicken
-mexicanCuisine,Order14-Chimichanga
-italianCuisine,Order15-Pizza
-americanCuisine,Order16-Burger
-mexicanCuisine,Order17-Taco
-italianCuisine,Order18-Lasagna
-americanCuisine,Order19-FriedChicken
-mexicanCuisine,Order20-Burrito
-italianCuisine,Order21-Ravioli
-americanCuisine,Order22-Steak
-mexicanCuisine,Order23-Quesadilla
-italianCuisine,Order24-Pasta
-americanCuisine,Order25-HotDog
-mexicanCuisine,Order26-Enchilada
-italianCuisine,Order27-Fettuccine
-americanCuisine,Order28-Burger
-mexicanCuisine,Order29-Taco
-italianCuisine,Order30-Lasagna
-americanCuisine,Order31-ChickenSandwich
-mexicanCuisine,Order32-Chimichanga
-italianCuisine,Order33-Pizza
-americanCuisine,Order34-BBQChicken
-mexicanCuisine,Order35-Burrito
-italianCuisine,Order36-Ravioli
-americanCuisine,Order37-FriedChicken
-mexicanCuisine,Order38-Taco
-italianCuisine,Order39-Fettuccine
-americanCuisine,Order40-Steak
-mexicanCuisine,Order41-Quesadilla
-italianCuisine,Order42-Pasta
-americanCuisine,Order43-Burger
-mexicanCuisine,Order44-Enchilada
-italianCuisine,Order45-Lasagna
-americanCuisine,Order46-HotDog
-mexicanCuisine,Order47-Burrito
-italianCuisine,Order48-Ravioli
-americanCuisine,Order49-ChickenSandwich
-mexicanCuisine,Order50-Chimichanga
-italianCuisine,Order51-Pizza
-americanCuisine,Order52-BBQChicken
-mexicanCuisine,Order53-Taco
-italianCuisine,Order54-Fettuccine
-americanCuisine,Order55-FriedChicken
-mexicanCuisine,Order56-Quesadilla
-italianCuisine,Order57-Pasta
-americanCuisine,Order58-Steak
-mexicanCuisine,Order59-Enchilada
-italianCuisine,Order60-Lasagna
-americanCuisine,Order61-Burger
-mexicanCuisine,Order62-Burrito
-italianCuisine,Order63-Ravioli
-americanCuisine,Order64-HotDog
-mexicanCuisine,Order65-Taco
-italianCuisine,Order66-Fettuccine
-americanCuisine,Order67-ChickenSandwich
-mexicanCuisine,Order68-Chimichanga
-italianCuisine,Order69-Pizza
-americanCuisine,Order70-BBQChicken
-mexicanCuisine,Order71-Quesadilla
-italianCuisine,Order72-Pasta
-americanCuisine,Order73-FriedChicken
-mexicanCuisine,Order74-Enchilada
-italianCuisine,Order75-Lasagna
-americanCuisine,Order76-Steak
-mexicanCuisine,Order77-Burrito
-italianCuisine,Order78-Ravioli
-americanCuisine,Order79-Burger
-mexicanCuisine,Order80-Taco
-italianCuisine,Order81-Fettuccine
-americanCuisine,Order82-HotDog
-mexicanCuisine,Order83-Chimichanga
-italianCuisine,Order84-Pizza
-americanCuisine,Order85-ChickenSandwich
-mexicanCuisine,Order86-Quesadilla
-italianCuisine,Order87-Pasta
-americanCuisine,Order88-BBQChicken
-mexicanCuisine,Order89-Enchilada
-italianCuisine,Order90-Lasagna
-americanCuisine,Order91-FriedChicken
-mexicanCuisine,Order92-Burrito
-italianCuisine,Order93-Ravioli
-americanCuisine,Order94-Steak
-mexicanCuisine,Order95-Taco
-italianCuisine,Order96-Fettuccine
-americanCuisine,Order97-Burger
-mexicanCuisine,Order98-Chimichanga
-italianCuisine,Order99-Pizza
-americanCuisine,Order100-HotDog
+American Cuisine,Order 1 - Burger
+Mexican Cuisine,Order 2 - Taco
+Italian Cuisine,Order 3 - Pasta
+American Cuisine,Order 4 - HotDog
+Mexican Cuisine,Order 5 - Burrito
+Italian Cuisine,Order 6 - Lasagna
+American Cuisine,Order 7 - Steak
+Mexican Cuisine,Order 8 - Quesadilla
+Italian Cuisine,Order 9 - Ravioli
+American Cuisine,Order 10 - ChickenSandwich
+Mexican Cuisine,Order 11 - Enchilada
+Italian Cuisine,Order 12 - Fettuccine
+American Cuisine,Order 13 - BBQChicken
+Mexican Cuisine,Order 14 - Chimichanga
+Italian Cuisine,Order 15 - Pizza
+American Cuisine,Order 16 - Burger
+Mexican Cuisine,Order 17 - Taco
+Italian Cuisine,Order 18 - Lasagna
+American Cuisine,Order 19 - FriedChicken
+Mexican Cuisine,Order 20 - Burrito
+Italian Cuisine,Order 21 - Ravioli
+American Cuisine,Order 22 - Steak
+Mexican Cuisine,Order 23 - Quesadilla
+Italian Cuisine,Order 24 - Pasta
+American Cuisine,Order 25 - HotDog
+Mexican Cuisine,Order 26 - Enchilada
+Italian Cuisine,Order 27 - Fettuccine
+American Cuisine,Order 28 - Burger
+Mexican Cuisine,Order 29 - Taco
+Italian Cuisine,Order 30 - Lasagna
+American Cuisine,Order 31 - ChickenSandwich
+Mexican Cuisine,Order 32 - Chimichanga
+Italian Cuisine,Order 33 - Pizza
+American Cuisine,Order 34 - BBQChicken
+Mexican Cuisine,Order 35 - Burrito
+Italian Cuisine,Order 36 - Ravioli
+American Cuisine,Order 37 - FriedChicken
+Mexican Cuisine,Order 38 - Taco
+Italian Cuisine,Order 39 - Fettuccine
+American Cuisine,Order 40 - Steak
+Mexican Cuisine,Order 41 - Quesadilla
+Italian Cuisine,Order 42 - Pasta
+American Cuisine,Order 43 - Burger
+Mexican Cuisine,Order 44 - Enchilada
+Italian Cuisine,Order 45 - Lasagna
+American Cuisine,Order 46 - HotDog
+Mexican Cuisine,Order 47 - Burrito
+Italian Cuisine,Order 48 - Ravioli
+American Cuisine,Order 49 - ChickenSandwich
+Mexican Cuisine,Order 50 - Chimichanga
+Italian Cuisine,Order 51 - Pizza
+American Cuisine,Order 52 - BBQChicken
+Mexican Cuisine,Order 53 - Taco
+Italian Cuisine,Order 54 - Fettuccine
+American Cuisine,Order 55 - FriedChicken
+Mexican Cuisine,Order 56 - Quesadilla
+Italian Cuisine,Order 57 - Pasta
+American Cuisine,Order 58 - Steak
+Mexican Cuisine,Order 59 - Enchilada
+Italian Cuisine,Order 60 - Lasagna
+American Cuisine,Order 61 - Burger
+Mexican Cuisine,Order 62 - Burrito
+Italian Cuisine,Order 63 - Ravioli
+American Cuisine,Order 64 - HotDog
+Mexican Cuisine,Order 65 - Taco
+Italian Cuisine,Order 66 - Fettuccine
+American Cuisine,Order 67 - ChickenSandwich
+Mexican Cuisine,Order 68 - Chimichanga
+Italian Cuisine,Order 69 - Pizza
+American Cuisine,Order 70 - BBQChicken
+Mexican Cuisine,Order 71 - Quesadilla
+Italian Cuisine,Order 72 - Pasta
+American Cuisine,Order 73 - FriedChicken
+Mexican Cuisine,Order 74 - Enchilada
+Italian Cuisine,Order 75 - Lasagna
+American Cuisine,Order 76 - Steak
+Mexican Cuisine,Order 77 - Burrito
+Italian Cuisine,Order 78 - Ravioli
+American Cuisine,Order 79 - Burger
+Mexican Cuisine,Order 80 - Taco
+Italian Cuisine,Order 81 - Fettuccine
+American Cuisine,Order 82 - HotDog
+Mexican Cuisine,Order 83 - Chimichanga
+Italian Cuisine,Order 84 - Pizza
+American Cuisine,Order 85 - ChickenSandwich
+Mexican Cuisine,Order 86 - Quesadilla
+Italian Cuisine,Order 87 - Pasta
+American Cuisine,Order 88 - BBQChicken
+Mexican Cuisine,Order 89 - Enchilada
+Italian Cuisine,Order 90 - Lasagna
+American Cuisine,Order 91 - FriedChicken
+Mexican Cuisine,Order 92 - Burrito
+Italian Cuisine,Order 93 - Ravioli
+American Cuisine,Order 94 - Steak
+Mexican Cuisine,Order 95 - Taco
+Italian Cuisine,Order 96 - Fettuccine
+American Cuisine,Order 97 - Burger
+Mexican Cuisine,Order 98 - Chimichanga
+Italian Cuisine,Order 99 - Pizza
+American Cuisine,Order 100 - HotDog
