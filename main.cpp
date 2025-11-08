@@ -5,12 +5,13 @@
 #include <list>
 #include <string>
 #include <fstream>
+#include <sstream>
 using namespace std;
-
 
 // Define a function to simulate restaurant order state changes over time
 // Parameters: map of cuisines, and number of time periods
 void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePeriods);
+bool loadOrdersFromFile(map<string, array<list<string>,3>> &cuisineMap);
 
 // Define main() function
 int main()
@@ -21,26 +22,13 @@ int main()
     // completed phase
     map<string, array<list<string>,3>> cuisineMap;
 
-    // First step: Open and external file ("orders.txt") to populate the map from it
-    ifstream inputFile("orders.txt");
+    if (!loadOrdersFromFile(cuisineMap))
+    {
+        cout << "Error: could not open orders.txt" << endl;
+        return 1;  // exit program with error code
+    }
 
-    // Second step: Check if file is open successfully otherwise print an error and exit
-
-    // Third step: Read data from file until the end of file is reached 
-    // Mock reading a single line (dummy data for now)
-
-    // Fourth step: For each line, extract cuisine name and order data
-    string cuisineName = "Italian";
-    string order = "Order1-Pizza";
-    cout << "Reading from file: " << cuisineName << " - " << order << endl;
-
-    // Fifth step: Insert order into the appropriate list in the array for their cuisine
-    cuisineMap[cuisineName][0].push_back(order);
-
-    // Sixth step: Close the file
-    inputFile.close();
-
-    // Seventh step: Call the simulateCuisine() function
+    // Call the simulateCuisine() function
     simulateCuisine(cuisineMap, 1);
 
     return 0;
@@ -49,7 +37,7 @@ int main()
 // simulateCuisine function logic
 void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePeriods)
 {
-    cout << "simulateCuisine() called with " << cuisineMap.size() << " cuisines." << endl;
+    cout << endl << endl << "simulateCuisine() called with " << cuisineMap.size() << " cuisines." << endl;
     
     // for each time period (1 to 25):
     for (int i = 1; i <= timePeriods; ++i)
@@ -79,4 +67,43 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
             // Wait or pause briefly to simulate passage of time                
         }
     }
+}
+
+bool loadOrdersFromFile(map<string, array<list<string>,3>> &cuisineMap)
+{
+    // Open and external file ("orders.txt") to populate the map from it
+    ifstream inputFile("orders.txt");
+
+    // Check if file is open successfully otherwise print an error and exit
+    if (!inputFile) 
+    {
+        return false;
+    }
+
+    // Read data from file until the end of file is reached 
+    string line;
+    while (getline(inputFile, line)) 
+    {
+        // line contains one order from the file
+        cout << "Read line: " << line << endl;
+
+        // For each line, extract cuisine name and order data
+        stringstream ss(line);
+        string cuisineName;
+        string order;
+
+        // Insert into map (wireframe)
+        // cuisineMap[cuisineName][0].push_back(order);
+        if (getline(ss, cuisineName, ',') && getline(ss, order)) 
+        {
+            cout << "Cuisine: " << cuisineName << " order: " << order << endl;
+            // Insert order into the appropriate list in the array for their cuisine
+            cuisineMap[cuisineName][0].push_back(order);  // add to waiting list
+        }
+    }
+
+    // Close the file
+    inputFile.close();
+    
+    return true;
 }
