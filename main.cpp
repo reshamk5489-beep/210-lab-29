@@ -25,6 +25,10 @@ int main()
     ifstream inputFile("orders.txt");
 
     // Second step: Check if file is open successfully otherwise print an error and exit
+    if (!inputFile) {
+        cout << "Error: could not open orders.txt" << endl;
+        return 1;  // exit program with error code
+    }
 
     // Third step: Read data from file until the end of file is reached 
     // Mock reading a single line (dummy data for now)
