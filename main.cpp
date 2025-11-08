@@ -8,10 +8,10 @@
 #include <sstream>
 using namespace std;
 
-
 // Define a function to simulate restaurant order state changes over time
 // Parameters: map of cuisines, and number of time periods
 void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePeriods);
+void loadOrdersFromFile(map<string, array<list<string>,3>> &cuisineMap);
 
 // Define main() function
 int main()
@@ -22,42 +22,19 @@ int main()
     // completed phase
     map<string, array<list<string>,3>> cuisineMap;
 
-    // First step: Open and external file ("orders.txt") to populate the map from it
+    // Open and external file ("orders.txt") to populate the map from it
     ifstream inputFile("orders.txt");
 
-    // Second step: Check if file is open successfully otherwise print an error and exit
+    // Check if file is open successfully otherwise print an error and exit
     if (!inputFile) 
     {
         cout << "Error: could not open orders.txt" << endl;
         return 1;  // exit program with error code
     }
 
-    // Third step: Read data from file until the end of file is reached 
-    string line;
-    while (getline(inputFile, line)) 
-    {
-        // line contains one order from the file
-        cout << "Read line: " << line << endl;
+    loadOrdersFromFile(cuisineMap);
 
-        // Fourth step: For each line, extract cuisine name and order data
-        stringstream ss(line);
-        string cuisineName;
-        string order;
-
-        // Insert into map (wireframe)
-        // cuisineMap[cuisineName][0].push_back(order);
-        if (getline(ss, cuisineName, ',') && getline(ss, order)) 
-        {
-            cout << "Cuisine: " << cuisineName << " order: " << order << endl;
-            // Fifth step: Insert order into the appropriate list in the array for their cuisine
-            cuisineMap[cuisineName][0].push_back(order);  // add to waiting list
-        }
-    }
-
-    // Sixth step: Close the file
-    inputFile.close();
-
-    // Seventh step: Call the simulateCuisine() function
+    // Call the simulateCuisine() function
     simulateCuisine(cuisineMap, 1);
 
     return 0;
@@ -96,4 +73,32 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
             // Wait or pause briefly to simulate passage of time                
         }
     }
+}
+
+void loadOrdersFromFile(map<string, array<list<string>,3>> &cuisineMap)
+{
+    // Read data from file until the end of file is reached 
+    string line;
+    while (getline(inputFile, line)) 
+    {
+        // line contains one order from the file
+        cout << "Read line: " << line << endl;
+
+        // For each line, extract cuisine name and order data
+        stringstream ss(line);
+        string cuisineName;
+        string order;
+
+        // Insert into map (wireframe)
+        // cuisineMap[cuisineName][0].push_back(order);
+        if (getline(ss, cuisineName, ',') && getline(ss, order)) 
+        {
+            cout << "Cuisine: " << cuisineName << " order: " << order << endl;
+            // Insert order into the appropriate list in the array for their cuisine
+            cuisineMap[cuisineName][0].push_back(order);  // add to waiting list
+        }
+    }
+
+    // Close the file
+    inputFile.close();
 }
