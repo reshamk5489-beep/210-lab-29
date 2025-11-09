@@ -31,7 +31,7 @@ int main()
     }
 
     // Call the simulateCuisine() function
-    simulateCuisine(cuisineMap, 1);
+    simulateCuisine(cuisineMap, 25);
 
     return 0;
 }
@@ -68,17 +68,19 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
             // Move 1 order from waiting [0] to cooking [1] if list not empty
             //if waiting list not empty:
                 // remove first order from waiting
-                //add to cooking list
+                // add to cooking list
+            int waitingOrdersToBeMovedToCooking;
             if (waitingOrders.size() > 0)
             {
                 if (cookingOrders.size() > 0)
                 {
-                    int waitingOrdersToBeMovedToCooking = cookingOrders.size() + 1;
-                    for (int waitingOrderIndex = 0; waitingOrderIndex < waitingOrdersToBeMovedToCooking; ++waitingOrderIndex)
-                    {
-                        string waitingOrder = cookingOrders.front();
-                        completedOrders.push_back(waitingOrder);
-                    }
+                    waitingOrdersToBeMovedToCooking = cookingOrders.size() + 1;
+                }
+
+                for (int waitingOrderIndex = 0; waitingOrderIndex < waitingOrdersToBeMovedToCooking; ++waitingOrderIndex)
+                {
+                    string waitingOrder = cookingOrders.front();
+                    cookingOrders.push_back(waitingOrder);
                 }
             }
 
