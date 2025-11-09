@@ -51,12 +51,17 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
             // if cooking list not empty:
                 // remove first order from cooking
                 // add to completed list
-            if (cuisine.second[1].size() > 0)
+
+            list<string> waitingOrders = cuisine.second[0];
+            list<string> cookingOrders = cuisine.second[1];
+            list<string> completedOrders = cuisine.second[2];
+            if (cookingOrders.size() > 0)
             {
-                int randomCompletedOrders = rand() % cuisine.second[1].size();
+                int randomCompletedOrders = rand() % cookingOrders.size() + 1;
                 for (int cookingOrderIndex = 0; cookingOrderIndex < randomCompletedOrders; ++cookingOrderIndex)
                 {
-                    
+                    string item = cookingOrders.front();
+                    completedOrders.push_back(item);
                 }
             }
 
@@ -70,9 +75,9 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
 
             // Print current number of orders in waiting, cooking, completed for this cuisine
             cout << "Simulating cuisine: " << cuisine.first << endl;
-            cout << "Orders - Waiting: " << cuisine.second[0].size()
-                    << ", Cooking: " << cuisine.second[1].size()
-                    << ", Completed: " << cuisine.second[2].size() << endl;
+            cout << "Orders - Waiting: " << waitingOrders.size()
+                    << ", Cooking: " << cookingOrders.size()
+                    << ", Completed: " << completedOrders.size() << endl;
 
             // Wait or pause briefly to simulate passage of time                
         }
