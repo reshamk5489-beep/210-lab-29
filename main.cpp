@@ -60,8 +60,8 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
                 int randomCompletedOrders = rand() % cookingOrders.size() + 1;
                 for (int cookingOrderIndex = 0; cookingOrderIndex < randomCompletedOrders; ++cookingOrderIndex)
                 {
-                    string item = cookingOrders.front();
-                    completedOrders.push_back(item);
+                    string cookingOrder = cookingOrders.front();
+                    completedOrders.push_back(cookingOrder);
                 }
             }
 
@@ -69,6 +69,18 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
             //if waiting list not empty:
                 // remove first order from waiting
                 //add to cooking list
+            if (waitingOrders.size() > 0)
+            {
+                if (cookingOrders.size() > 0)
+                {
+                    int waitingOrdersToBeMovedToCooking = cookingOrders.size() + 1;
+                    for (int waitingOrderIndex = 0; waitingOrderIndex < waitingOrdersToBeMovedToCooking; ++waitingOrderIndex)
+                    {
+                        string waitingOrder = cookingOrders.front();
+                        completedOrders.push_back(waitingOrder);
+                    }
+                }
+            }
 
             // Optionally, add a new dummy order to waiting list
             // add "OrderX-CuisineName" to waiting list
