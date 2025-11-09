@@ -8,6 +8,8 @@
 #include <sstream>
 using namespace std;
 
+const int MAX_COOKING_ORDER = 5;
+
 // Define a function to simulate restaurant order state changes over time
 // Parameters: map of cuisines, and number of time periods
 void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePeriods);
@@ -45,15 +47,23 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
         // for each cuisine in the map:
         for (auto& cuisine : cuisineMap)
         {
-            // Move 1 order from waiting [0] to cooking [1] if list not empty
-            //if waiting list not empty:
-                // remove first order from waiting
-                //add to cooking list
-
             // Move 1 order from cooking [1] to completed [2] if list not empty
             // if cooking list not empty:
                 // remove first order from cooking
                 // add to completed list
+            if (cuisine.second[1].size() > 0)
+            {
+                int randomCompletedOrders = rand() % cuisine.second[1].size();
+                for (int cookingOrderIndex = 0; cookingOrderIndex < randomCompletedOrders; ++cookingOrderIndex)
+                {
+                    
+                }
+            }
+
+            // Move 1 order from waiting [0] to cooking [1] if list not empty
+            //if waiting list not empty:
+                // remove first order from waiting
+                //add to cooking list
 
             // Optionally, add a new dummy order to waiting list
             // add "OrderX-CuisineName" to waiting list
