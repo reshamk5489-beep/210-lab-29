@@ -7,6 +7,7 @@
 #include <fstream>
 #include <sstream>
 #include <cstdlib>
+#include <ctime>
 using namespace std;
 
 const int MAX_COOKING_ORDER = 5;
@@ -19,6 +20,8 @@ bool loadOrdersFromFile(map<string, array<list<string>,3>> &cuisineMap);
 // Define main() function
 int main()
 {
+    srand(static_cast<unsigned int>(time(0))); // seed random number generator with current time
+
     // Initialize a map<string, array<list<string>,3>> called cuisineMap to store 
     // the information for the different cuisines, each associated with an array 
     // of lists for orders that are in the waiting phase, cooking phase, and 
@@ -32,7 +35,7 @@ int main()
     }
 
     // Call the simulateCuisine() function
-    simulateCuisine(cuisineMap, 2);
+    simulateCuisine(cuisineMap, 25);
 
     return 0;
 }
@@ -53,14 +56,10 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
                 // remove first order from cooking
                 // add to completed list
 
-            list<string> waitingOrders = cuisine.second[0];
-            list<string> cookingOrders = cuisine.second[1];
-            list<string> completedOrders = cuisine.second[2];
+            list<string> &waitingOrders = cuisine.second[0];
+            list<string> &cookingOrders = cuisine.second[1];
+            list<string> &completedOrders = cuisine.second[2];
 
-            cout << "XX - Waiting: " << waitingOrders.size()
-                    << ", Cooking: " << cookingOrders.size()
-                    << ", Completed: " << completedOrders.size() << endl;
-                    
             if (cookingOrders.size() > 0)
             {
                 int randomCompletedOrders = rand() % cookingOrders.size() + 1;
@@ -70,6 +69,7 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
                 {
                     string cookingOrder = cookingOrders.front();
                     completedOrders.push_back(cookingOrder);
+                    cookingOrders.pop_front();
                 }
             }
 
