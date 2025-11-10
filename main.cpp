@@ -69,18 +69,19 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
             //if waiting list not empty:
                 // remove first order from waiting
                 // add to cooking list
-            int waitingOrdersToBeMovedToCooking;
+            int waitingOrdersToBeMovedToCooking = MAX_COOKING_ORDER;
             if (waitingOrders.size() > 0)
             {
                 if (cookingOrders.size() > 0)
                 {
-                    waitingOrdersToBeMovedToCooking = cookingOrders.size() + 1;
+                    waitingOrdersToBeMovedToCooking -= cookingOrders.size();
                 }
 
-                for (int waitingOrderIndex = 0; waitingOrderIndex < waitingOrdersToBeMovedToCooking; ++waitingOrderIndex)
+                for (int waitingOrderIndex = 0; waitingOrderIndex < waitingOrdersToBeMovedToCooking && waitingOrderIndex < waitingOrders.size(); ++waitingOrderIndex)
                 {
-                    string waitingOrder = cookingOrders.front();
+                    string waitingOrder = waitingOrders.front();
                     cookingOrders.push_back(waitingOrder);
+                    waitingOrders.pop_front();
                 }
             }
 
