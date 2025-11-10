@@ -14,12 +14,13 @@ const int MAX_COOKING_ORDER = 5;
 
 // Define a function to simulate restaurant order state changes over time
 // Parameters: map of cuisines, and number of time periods
-void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePeriods);
+void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePeriods, int &orderCounter);
 bool loadOrdersFromFile(map<string, array<list<string>,3>> &cuisineMap);
 
 // Define main() function
 int main()
 {
+    int orderCounter = 100;
     srand(static_cast<unsigned int>(time(0))); // seed random number generator with current time
 
     // Initialize a map<string, array<list<string>,3>> called cuisineMap to store 
@@ -35,19 +36,20 @@ int main()
     }
 
     // Call the simulateCuisine() function
-    simulateCuisine(cuisineMap, 25);
+    simulateCuisine(cuisineMap, 25, orderCounter);
 
     return 0;
 }
 
 // simulateCuisine function logic
-void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePeriods)
+void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePeriods, int &orderCounter)
 {
     cout << endl << endl << "simulateCuisine() called with " << cuisineMap.size() << " cuisines." << endl;
     
     // for each time period (1 to 25):
     for (int i = 1; i <= timePeriods; ++i)
     {
+        cout << endl << endl;
         // for each cuisine in the map:
         for (auto& cuisine : cuisineMap)
         {
@@ -94,10 +96,9 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
 
             // Optionally, add a new dummy order to waiting list
             // add "OrderX-CuisineName" to waiting list
-            int randomWaitingOrdersToAdd = rand() % 2;
-            for (int randomWaitingOrderToAdd = 0; randomWaitingOrderToAdd < randomWaitingOrdersToAdd; ++randomWaitingOrderToAdd)
+            for (int randomWaitingOrderToAdd = 0; randomWaitingOrderToAdd < rand() % 2; ++randomWaitingOrderToAdd)
             {
-                
+                waitingOrders.push_back("Order " + to_string(++orderCounter));
             }
 
             // Print current number of orders in waiting, cooking, completed for this cuisine
@@ -105,8 +106,6 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
             cout << "Orders - Waiting: " << waitingOrders.size()
                     << ", Cooking: " << cookingOrders.size()
                     << ", Completed: " << completedOrders.size() << endl;
-
-            // Wait or pause briefly to simulate passage of time                
         }
     }
 }
