@@ -63,7 +63,6 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
             if (cookingOrders.size() > 0)
             {
                 int randomCompletedOrders = rand() % cookingOrders.size() + 1;
-                cout << "randomCompletedOrders: " << randomCompletedOrders << endl;
 
                 for (int cookingOrderIndex = 0; cookingOrderIndex < randomCompletedOrders; ++cookingOrderIndex)
                 {
@@ -95,6 +94,11 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
 
             // Optionally, add a new dummy order to waiting list
             // add "OrderX-CuisineName" to waiting list
+            int randomWaitingOrdersToAdd = rand() % 2;
+            for (int randomWaitingOrderToAdd = 0; randomWaitingOrderToAdd < randomWaitingOrdersToAdd; ++randomWaitingOrderToAdd)
+            {
+                
+            }
 
             // Print current number of orders in waiting, cooking, completed for this cuisine
             cout << "Simulating cuisine: " << cuisine.first << endl;
