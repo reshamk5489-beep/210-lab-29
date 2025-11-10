@@ -1,0 +1,32 @@
+Bug #1: Iterating only once instead of 25 times.
+Fix #1: Changed the iteration count from 1 to 25.
+
+Bug #2: Moving waiting orders to the completed orders list instead of cooking.
+Fix #2: Moving waiting orders to cooking orders during each iteration.
+
+Bug #3: Reading cooking orders and adding to cooking orders instead of reading from waiting orders.
+Fix #3: Reading from waiting orders and adding to cooking orders.
+
+Bug #4: Moving waiting orders to the cooking orders list only when the cooking orders list is not empty.
+Fix #4: Moving waiting orders to the cooking orders list even when the cooking orders list is empty.
+
+Bug #5: Not initializing waitingOrdersToBeMovedToCooking variable.
+Fix #5: Initializing waitingOrdersToBeMovedToCooking variable to 5 (the max number of orders in cooking phase per cuisine).
+
+Bug #6: Not checking whether the waiting order list is empty or not before moving to the cooking order list.
+Fix #6: Added a check to ensure that the moving list is not empty before moving the orders to the cooking order list.
+
+Bug #7: Copying waiting orders to cooking orders list without deleting from waiting orders.
+Fix #7: Copying waiting orders to the cooking orders list and then removed from the waiting orders list.
+
+Bug #8: Reading orders from cooking orders instead of waiting orders before moving to cooking orders.
+Fix #8: Reading from waiting orders and moving to cooking orders.
+
+Bug #9: Retrieving copy of order list from cuisine map instead of reference.
+Fix #9: Retrieving the reference of the order list from the cuisine map.
+
+Bug #10: While moving orders from cooking to completion, not removing from cooking.
+Fix #10: Deleting cooking orders after moving to completion.
+
+Bug #11: Randomly moving orders from cooking completed orders, generating the same output on every simulation run.
+Fix #11: Added seed to random number generator so that each simulation run generates different output.
