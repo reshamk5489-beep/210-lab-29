@@ -6,6 +6,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <cstdlib>
 using namespace std;
 
 const int MAX_COOKING_ORDER = 5;
@@ -31,7 +32,7 @@ int main()
     }
 
     // Call the simulateCuisine() function
-    simulateCuisine(cuisineMap, 25);
+    simulateCuisine(cuisineMap, 2);
 
     return 0;
 }
@@ -55,9 +56,16 @@ void simulateCuisine(map<string, array<list<string>,3>> &cuisineMap, int timePer
             list<string> waitingOrders = cuisine.second[0];
             list<string> cookingOrders = cuisine.second[1];
             list<string> completedOrders = cuisine.second[2];
+
+            cout << "XX - Waiting: " << waitingOrders.size()
+                    << ", Cooking: " << cookingOrders.size()
+                    << ", Completed: " << completedOrders.size() << endl;
+                    
             if (cookingOrders.size() > 0)
             {
                 int randomCompletedOrders = rand() % cookingOrders.size() + 1;
+                cout << "randomCompletedOrders: " << randomCompletedOrders << endl;
+
                 for (int cookingOrderIndex = 0; cookingOrderIndex < randomCompletedOrders; ++cookingOrderIndex)
                 {
                     string cookingOrder = cookingOrders.front();
@@ -114,9 +122,6 @@ bool loadOrdersFromFile(map<string, array<list<string>,3>> &cuisineMap)
     string line;
     while (getline(inputFile, line)) 
     {
-        // line contains one order from the file
-        cout << "Read line: " << line << endl;
-
         // For each line, extract cuisine name and order data
         stringstream ss(line);
         string cuisineName;
@@ -126,7 +131,6 @@ bool loadOrdersFromFile(map<string, array<list<string>,3>> &cuisineMap)
         // cuisineMap[cuisineName][0].push_back(order);
         if (getline(ss, cuisineName, ',') && getline(ss, order)) 
         {
-            cout << "Cuisine: " << cuisineName << " order: " << order << endl;
             // Insert order into the appropriate list in the array for their cuisine
             cuisineMap[cuisineName][0].push_back(order);  // add to waiting list
         }
